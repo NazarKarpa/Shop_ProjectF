@@ -44,7 +44,7 @@
 
                 <button
                 type="button"
-                class="btn btn-outline-light"
+                class="btn btn-outline-light ms-auto d-block"
                 data-bs-toggle="modal"
                 data-bs-target="#cartModal"
                 onclick="renderCart()">Cart
@@ -58,7 +58,6 @@
         </div>
 
     </header>
-    <!-- Main -->
     <main>
         <div class="container">
             <section class="py-4">
@@ -91,7 +90,7 @@
             </div>
         </div>
     </footer>
-
+<!-- Cart Modal -->
     <div
     class="modal fade"
     id="cartModal"
@@ -153,7 +152,25 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
+
+<!-- Detail Game modal window -->
+    <div class="modal" id="DetailModul" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Product name</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <script

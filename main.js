@@ -3,9 +3,8 @@ const SUPABASE_ANON_KEY = 'sb_publishable_r-U7-HbtR2WPu7hEtBrpzQ_LIwSLlhj';
 
 let products = [];
 const productsContainer = document.querySelector('#productsGrid');
+const detailModul = new bootstrap.Modal('#DetailModul', options)
 
-
-// 1.Універсальна функція для збереження будь-яких даних (масивів/об'єктів) у
 function getJsonCookie(cookieName) {
     const allCookies = document.cookie.split('; ');
     const targetCookie = allCookies.find(row => row.startsWith(cookieName +
@@ -184,20 +183,9 @@ function renderCart() {
 }
 
 function removeFromCart(index) {
-
     const cart = getCart();
-
-
     cart.splice(index, 1);
-
-
-    saveJsonCookie(
-        'cart',
-        cart,
-        3600 * 24 * 7
-    );
-
-
+    saveJsonCookie('cart', cart, 3600 * 24 * 7);
     renderCart();
 
     updateCartCount();
