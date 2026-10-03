@@ -3,7 +3,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_r-U7-HbtR2WPu7hEtBrpzQ_LIwSLlhj';
 
 let products = [];
 const productsContainer = document.querySelector('#productsGrid');
-const detailModul = new bootstrap.Modal('#DetailModul', options)
+const detailModul = new bootstrap.Modal('#DetailModul')
 
 function getJsonCookie(cookieName) {
     const allCookies = document.cookie.split('; ');
@@ -41,14 +41,23 @@ async function fetchData() {
 }
 
 function createProductCard(product) {
-    return `<div class="card" style="width: 18rem;">
-        <img src="${product.image_url}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${product.name}</h5>
-            <p class="card-text">${product.description}</p>
-            <button class="btn btn-primary" onclick="addToCart(${product.id})">Add to Cart</button>
-        </div>
-        </div>`
+    return `<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="product-card d-flex flex-column h-100">
+                <img src="${product.image_url}" class="card-img-top" alt="${product.name}">
+                <div class="card-body d-flex flex-column justify-content-between flex-grow-1">
+                    <div>
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text">${product.description}</p>
+                    </div>
+                    <div class="mt-3 d-flex align-items-center justify-content-between">
+                        <span class="product-price">$${product.price}</span>
+                        <button class="btn btn-primary" onclick="addToCart(${product.id})">
+                            В кошик
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
 }
 
 function getCart() {

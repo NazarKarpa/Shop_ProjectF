@@ -49,8 +49,8 @@ header {
 }
 
 .logo {
-    width: 42px;
-    height: 42px;
+    max-width: 100px;
+    max-height: 100px;
 
     object-fit: contain;
 }
@@ -232,4 +232,8 @@ footer {
     background-color: var(--primary);
 
     color: white;
+}
+
+.card-img-top{
+    max-height: 300px;
 }
